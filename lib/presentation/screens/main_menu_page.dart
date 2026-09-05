@@ -23,7 +23,7 @@ class MainMenuPage extends StatelessWidget {
             items: [
               _buildBottomNavigationBarItemWidget(icon:  AppIcons.icExpenseInvoice, label: '', index: 0),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icWallet, label: '', index: 1),
-
+              _buildBottomNavigationBarItemWidget(icon: AppIcons.icAdd, label: '', index: -1),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icChartUp, label: '', index: 2),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icSettings, label: '', index: 3),
             ]),
@@ -33,7 +33,14 @@ class MainMenuPage extends StatelessWidget {
 
   BottomNavigationBarItem _buildBottomNavigationBarItemWidget({required String icon, required String label, required int index, bool isAdd = false}) =>
       BottomNavigationBarItem(
-        icon: SvgPicture.asset(icon), label: label,
+        icon: isAdd ? Container(decoration: BoxDecoration(
+          shape: .circle,
+          color: AppColors.blackColor
+        ),
+          height: 36,
+          alignment: .center,
+          child: SvgPicture.asset(icon),
+        ) : SvgPicture.asset(icon), label: label,
       );
 
 }
