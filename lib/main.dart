@@ -1,3 +1,4 @@
+import 'package:expense_tracker_ui/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'constants/string_const.dart';
 
@@ -11,12 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: StringConst.appTitle,
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        brightness: .light
       ),
-      home: Scaffold(body: Center(child: Text("Expense Tracker app UI"),),)
+      routerConfig: router,
+      builder: (ctx, child) => child!,
     );
   }
 }
