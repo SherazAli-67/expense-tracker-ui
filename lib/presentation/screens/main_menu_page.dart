@@ -23,7 +23,7 @@ class MainMenuPage extends StatelessWidget {
             items: [
               _buildBottomNavigationBarItemWidget(icon:  AppIcons.icExpenseInvoice, label: '', index: 0),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icWallet, label: '', index: 1),
-              _buildBottomNavigationBarItemWidget(icon: AppIcons.icAdd, label: '', index: -1),
+              _buildBottomNavigationBarItemWidget(icon: AppIcons.icAdd, label: '', index: -1, isAdd: true),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icChartUp, label: '', index: 2),
               _buildBottomNavigationBarItemWidget(icon: AppIcons.icSettings, label: '', index: 3),
             ]),

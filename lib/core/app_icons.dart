@@ -6,5 +6,5 @@ class AppIcons {
   static const icAdd = '${_iconsPath}ic_add.svg';
   static const icChartUp = '${_iconsPath}ic_chart.svg';
   static const icSettings = '${_iconsPath}ic_settings.svg';
-
+  static const icDrawer = '${_iconsPath}ic_drawer.svg';
 }
