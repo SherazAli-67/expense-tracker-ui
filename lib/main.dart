@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants/string_const.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expense Tracker',
+      title: StringConst.appTitle,
       theme: ThemeData(
-
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(body: Center(child: Text("Expense Tracker app UI"),),)
