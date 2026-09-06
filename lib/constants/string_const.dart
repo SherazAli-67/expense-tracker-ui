@@ -1,8 +1,8 @@
 class StringConst {
   static const appTitle = 'Expense Tracker';
   static const appFontFamily = 'Sora';
-  static const userName = 'Saad Shaikh';
-  static const greeting = 'Hello Linh!';
+  static const userName = 'Sheraz Ali';
+  static const greeting = 'Good Morning!';
   static const addTransaction = 'Add Transaction';
   static const enterYourReason = 'Enter your reason';
   static const jan = 'Jan';

@@ -13,43 +13,54 @@ class TransactionTile extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         spacing: 16,
         children: [
-          Row(
-            spacing: 16,
-            children: [
-              Container(
-                width: 56,
-                height: 56,
-                decoration: BoxDecoration(
-                  color: AppColors.neutral200Color,
-                  shape: .circle,
+          Padding(
+            padding: .zero,
+            child: Row(
+              spacing: 16,
+              crossAxisAlignment: .center,
+              children: [
+                Container(
+                  width: 56,
+                  height: 56,
+                  margin: .only(top: 10),
+                  decoration: BoxDecoration(
+                    color: AppColors.neutral200Color,
+                    shape: .circle,
+                  ),
+                  alignment: .center,
+                  child: Text(transaction.emoji, style: const TextStyle(fontSize: 32, height: 1.1)),
                 ),
-                alignment: .center,
-                child: Text(transaction.emoji, style: const TextStyle(fontSize: 32, height: 1.1)),
-              ),
-              Expanded(
-                child: Row(
-                  spacing: 15,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: .start,
-                        spacing: 2,
-                        children: [
-                          Text(transaction.dateLabel, style: AppTextStyles.transactionDate),
-                          Text(transaction.title, style: AppTextStyles.transactionTitle),
-                        ],
+                Expanded(
+                  child: Row(
+                    spacing: 15,
+                    crossAxisAlignment: .center,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: .start,
+                          spacing: 2,
+                          children: [
+                            Text(transaction.dateLabel, style: AppTextStyles.transactionDate),
+                            Text(transaction.title, style: AppTextStyles.transactionTitle),
+                          ],
+                        ),
                       ),
-                    ),
-                    Text(
-                      '${transaction.isIncome ? '' : '-'}\$${transaction.amount.toStringAsFixed(2)}',
-                      style: AppTextStyles.transactionAmount,
-                    ),
-                  ],
+                      Text(
+                        '${transaction.isIncome ? '' : '-'}\$${transaction.amount.toStringAsFixed(2)}',
+                        style: AppTextStyles.transactionAmount,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-          const Divider(height: 1, thickness: 1, color: AppColors.dividerColor),
+          Container(
+            height: 1,
+            color: AppColors.dividerColor.withValues(alpha: 0.2),
+            width: .infinity,
+          )
+          // const Divider(height: 1, thickness: 1, color: AppColors.dividerColor),
         ],
       );
 }

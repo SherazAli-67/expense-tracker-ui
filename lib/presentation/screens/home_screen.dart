@@ -24,7 +24,7 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
         body: Column(
           children: [
             Padding(
-              padding: .symmetric(horizontal: 20),
+              padding: .symmetric(horizontal: 20, vertical: 20),
               child: Column(
                 spacing: 28,
                 children: [
@@ -46,7 +46,7 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
             ),
             Expanded(
               child: ListView.builder(
-                padding: .fromLTRB(20, 28, 20, 16),
+                padding: .symmetric(horizontal: 10),
                 itemCount: AppData.transactions.length,
                 itemBuilder: (context, index) => TransactionTile(transaction: AppData.transactions[index]),
               ),

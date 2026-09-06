@@ -132,8 +132,8 @@ class _DayChip extends StatelessWidget {
         onTap: onTap,
         child: Container(
           width: 35,
-          height: 55,
-          padding: .all(10),
+          height: 60,
+          // padding: .all(10),
           decoration: BoxDecoration(
             color: isSelected ? AppColors.blackColor : AppColors.neutral200Color,
             borderRadius: .circular(18),
@@ -146,9 +146,11 @@ class _DayChip extends StatelessWidget {
                 day.weekdayLetter,
                 style: isSelected ? AppTextStyles.dayChipLabelSelected : AppTextStyles.dayChipLabel,
               ),
-              Text(
-                day.dayNumber,
-                style: isSelected ? AppTextStyles.dayChipNumberSelected : AppTextStyles.dayChipNumber,
+              FittedBox(
+                child: Text(
+                  day.dayNumber,
+                  style: isSelected ? AppTextStyles.dayChipNumberSelected : AppTextStyles.dayChipNumber,
+                ),
               ),
             ],
           ),
