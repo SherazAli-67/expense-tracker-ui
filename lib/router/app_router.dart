@@ -1,11 +1,13 @@
 import 'package:expense_tracker_ui/presentation/screens/home_screen.dart';
 import 'package:expense_tracker_ui/presentation/screens/main_menu_page.dart';
+import 'package:expense_tracker_ui/presentation/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter router = GoRouter(
   initialLocation: NamedRoutes.expenseTracking.routeName,
   routes: [
+    GoRoute(path: NamedRoutes.welcome.routeName, builder: (_, state) => const WelcomeScreen()),
     StatefulShellRoute.indexedStack(
       builder: (ctx, state, navigationShell) => MainMenuPage(navigationShell: navigationShell),
       branches: [
@@ -27,6 +29,7 @@ GoRouter router = GoRouter(
 );
 
 enum NamedRoutes {
+  welcome('/welcome'),
   expenseTracking('/expense-tracking'),
   wallet('/wallet'),
   chart('/chart'),

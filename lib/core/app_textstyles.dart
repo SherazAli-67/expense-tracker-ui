@@ -3,6 +3,38 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
+  static const welcomeTitle = TextStyle(
+    fontSize: 18,
+    fontWeight: .w700,
+    color: AppColors.blackColor,
+  );
+
+  static const welcomeSubtitle = TextStyle(
+    fontSize: 14,
+    fontWeight: .w400,
+    color: AppColors.neutral800Color,
+    height: 1.4,
+  );
+
+  static const welcomePrimaryButton = TextStyle(
+    fontSize: 14,
+    fontWeight: .w600,
+    color: AppColors.whiteColor,
+  );
+
+  static const welcomeSecondaryButton = TextStyle(
+    fontSize: 14,
+    fontWeight: .w600,
+    color: AppColors.blackColor,
+  );
+
+  static const welcomeTag = TextStyle(
+    fontSize: 11,
+    fontWeight: .w600,
+    color: AppColors.blackColor,
+    height: 1.2,
+  );
+
   static const userName = TextStyle(
     fontSize: 20,
     fontWeight: .w600,

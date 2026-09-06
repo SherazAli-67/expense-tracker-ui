@@ -1,6 +1,12 @@
 class StringConst {
   static const appTitle = 'Expense Tracker';
   static const appFontFamily = 'Sora';
+  static const welcomeTitle = 'Your cash flow strategy';
+  static const welcomeSubtitle = 'Adopt smart financial practices! Limit your expenditures and refrain from making impulsive purchases.';
+  static const welcomeSubscriptionTag = 'Easy Create Subscription Planing';
+  static const welcomeCashflowTag = 'Cash flow Monitoring';
+  static const next = 'Next';
+  static const skip = 'Skip';
   static const userName = 'Sheraz Ali';
   static const greeting = 'Good Morning!';
   static const addTransaction = 'Add Transaction';

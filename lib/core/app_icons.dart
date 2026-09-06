@@ -1,5 +1,6 @@
 class AppIcons {
   static const _iconsPath = 'assets/icons/';
+  static const _imagesPath = 'assets/images/';
 
   static const icExpenseInvoice = '${_iconsPath}ic_expense_invoice.svg';
   static const icWallet = '${_iconsPath}ic_wallet.svg';
@@ -9,4 +10,5 @@ class AppIcons {
   static const icDrawer = '${_iconsPath}ic_drawer.svg';
   static const icCancel = '${_iconsPath}ic_cancel.svg';
   static const icTransactionEmoji = '${_iconsPath}transaction_emoji.svg';
+  static const imgWelcomeHero = '${_imagesPath}img_welcome_hero.jpeg';
 }
