@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/app_colors.dart';
 import '../../core/app_icons.dart';
-import '../widgets/add_transaction_dialog.dart';
+import '../dialogs/add_transaction_dialog.dart';
 
 class MainMenuPage extends StatelessWidget {
   const MainMenuPage({super.key, required this.navigationShell});

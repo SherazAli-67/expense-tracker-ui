@@ -65,3 +65,64 @@ use
 If any code is possible in one-line, make it to one line
 
 9. Use spacing parameter for giving spacing in column or row items
+
+10. Instead of creating separate widgets, create builder methods within the class
+Example:
+
+Instead of
+
+class HomeHeader extends StatelessWidget {
+  const HomeHeader({
+    super.key,
+    required this.name,
+    required this.greeting,
+    this.onMenuTap,
+  });
+
+  final String name;
+  final String greeting;
+  final VoidCallback? onMenuTap;
+
+  @override
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: .spaceBetween,
+        crossAxisAlignment: .start,
+        children: [
+          Column(
+            crossAxisAlignment: .start,
+            spacing: 2,
+            children: [
+              Text(name, style: AppTextStyles.userName),
+              Text(greeting, style: AppTextStyles.greeting),
+            ],
+          ),
+          GestureDetector(
+            onTap: onMenuTap,
+            child: SvgPicture.asset(AppIcons.icDrawer, width: 28, height: 28),
+          ),
+        ],
+      );
+}
+
+Do:
+
+  Widget _buildHeaderWidget({required String name, required String greeting, VoidCallback? onTap}){
+    return Row(
+      mainAxisAlignment: .spaceBetween,
+      crossAxisAlignment: .start,
+      children: [
+        Column(
+          crossAxisAlignment: .start,
+          spacing: 2,
+          children: [
+            Text(name, style: AppTextStyles.userName),
+            Text(greeting, style: AppTextStyles.greeting),
+          ],
+        ),
+        GestureDetector(
+          onTap: onTap,
+          child: SvgPicture.asset(AppIcons.icDrawer, width: 28, height: 28),
+        ),
+      ],
+    );
+  }
