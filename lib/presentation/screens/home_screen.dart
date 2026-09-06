@@ -31,8 +31,8 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
                   Column(
                     spacing: 16,
                     children: [
-                      _buildBalanceWidget(balance: AppData.balance),
-                      _buildExpenseLineChartWidget(points: AppData.chartPoints),
+                      //\$${balance.toStringAsFixed(2)}, balance, alignment: center
+                      // _buildExpenseLineChartWidget(points: AppData.chartPoints),
                     ],
                   ),
                   _buildMonthSelectorWidget(
@@ -63,20 +63,18 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
           crossAxisAlignment: .start,
           spacing: 2,
           children: [
-            Text(name, style: AppTextStyles.userName),
-            Text(greeting, style: AppTextStyles.greeting),
+            //name, userName
+            //greeting, greeting
           ],
         ),
+
+        //icDrawer, height;28
         GestureDetector(
           onTap: onTap,
-          child: SvgPicture.asset(AppIcons.icDrawer, width: 28, height: 28),
+          child: const SizedBox()
         ),
       ],
     );
-  }
-
-  Widget _buildBalanceWidget({required double balance}) {
-    return Text('\$${balance.toStringAsFixed(2)}', style: AppTextStyles.balance, textAlign: .center);
   }
 
   Widget _buildExpenseLineChartWidget({required List<double> points, double height = 125}) {
@@ -103,13 +101,15 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
           return GestureDetector(
             onTap: () => onSelected(index),
             child: Container(
-              padding: .symmetric(horizontal: 16, vertical: 4),
+              // padding: .symmetric(horizontal: 16, vertical: 4),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.blackColor : AppColors.neutral200Color,
-                borderRadius: .circular(999),
+                // color: isSelected ? AppColors.blackColor : AppColors.neutral200Color,
+                // borderRadius: .circular(99),
               ),
-              alignment: .center,
-              child: Text(months[index], style: isSelected ? AppTextStyles.monthChipSelected : AppTextStyles.monthChip),
+              // alignment: .center,
+
+              //months[index], isSelected ? AppTextStyles.monthChipSelected : AppTextStyles.monthChip
+              child: const SizedBox()
             ),
           );
         },
@@ -130,10 +130,12 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
               Container(
                 width: 56,
                 height: 56,
-                margin: .only(top: 10),
-                decoration: BoxDecoration(color: AppColors.neutral200Color, shape: .circle),
-                alignment: .center,
-                child: Text(transaction.emoji, style: const TextStyle(fontSize: 32, height: 1.1)),
+                // margin: .only(top: 10),
+                // decoration: BoxDecoration(color: AppColors.neutral200Color, shape: .circle),
+                // alignment: .center,
+
+                //transaction.emoji, style: 32, height:1.1
+                child: const SizedBox()
               ),
               Expanded(
                 child: Row(
@@ -145,13 +147,16 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
                         crossAxisAlignment: .start,
                         spacing: 2,
                         children: [
-                          Text(transaction.dateLabel, style: AppTextStyles.transactionDate),
-                          Text(transaction.title, style: AppTextStyles.transactionTitle),
+
+                          //transaction.dateLabel, transactionDate
+                          //transaction.title, transactionTitle
                         ],
                       ),
                     ),
+
+                    //${transaction.isIncome ? '' : '-'}\$${transaction.amount.toStringAsFixed(2)}, transactionAmount
                     Text(
-                      '${transaction.isIncome ? '' : '-'}\$${transaction.amount.toStringAsFixed(2)}',
+                      '',
                       style: AppTextStyles.transactionAmount,
                     ),
                   ],
@@ -160,7 +165,7 @@ class _ExpenseTrackingScreenState extends State<ExpenseTrackingScreen> {
             ],
           ),
         ),
-        Container(height: 1, color: AppColors.dividerColor.withValues(alpha: 0.2), width: .infinity),
+        // Container(height: 1, color: AppColors.dividerColor.withValues(alpha: 0.2), width: .infinity),
       ],
     );
   }
